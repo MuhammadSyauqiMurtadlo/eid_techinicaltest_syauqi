@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+body {
+  background: #f8fafc;
+  color: #1e293b;
+}
+
+/* Animasi singkat saat data mesin berubah */
+@keyframes flash-ring {
+  0% {
+    opacity: 1;
+    background-color: rgba(59, 130, 246, 0.14);
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.55);
+  }
+  100% {
+    opacity: 0;
+    background-color: transparent;
+    box-shadow: 0 0 0 10px rgba(59, 130, 246, 0);
+  }
+}
+
+.flash-overlay {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  animation: flash-ring 0.9s ease-out forwards;
+}
